@@ -1,17 +1,24 @@
-## Rendu jour 9 de la formation THP: Le scrapping
+# Le Johnson ,  Google API des enfers & CSV
+![enter image description here](https://image.slidesharecdn.com/json-bspec-150615070736-lva1-app6892/95/jsonb-spec-3-638.jpg?cb=1434352144)
+
+**Par : [Charle Dutheil](https://github.com/Hydref) / [Emma CALVET ](https://github.com/emcalvet/) / [Karel CLOAREC ](https://github.com/Karel2/)**
+ ***Apprentis mages noirs from Montpellier***
+![](https://media.giphy.com/media/l46CsTPetihC1rX9K/giphy.gif)
+
+Le but de la journée est d'utiliser la **POO**, en réutilisant notre Scrapper (d'adresse emails des mairies du Val d'Oise)
+
+ - [x] Class    **Scrapper** : :thumbsup: Utilisation de la **POO** 
+ 
+ - [x]  methode **save_as_json** :thumbsup: Création d'un fichier Johnson ( **.json** ) avec des emails.
+ 
+ 
+ - [x] methode **save_as_spreadsheet** :hankey: Importation des données dans un Google Sheet
 
 
-**Par : [Hicham ABOUINAN](https://github.com/hich34) / [Emma CALVET](https://github.com/emcalvet) /[Jimmy CHARPAGNE](https://github.com/Hykios42)** ***Apprentis mages noirs form Montpellier***
+ - [x] methode **save_as_csv**  :sunglasses: Création d'un fichier format **.csv** comprenant une liste d'email 
 
-![Globalement ça c'est le résumé de notre journée](https://vignette.wikia.nocookie.net/harrypotter/images/b/b5/Hp4screen17.jpg/revision/latest/scale-to-width-down/900?cb=20090921084420&path-prefix=fr)
+![](https://media.giphy.com/media/OOz3w2JDiMKZNpnV4B/giphy.gif)
 
-![](https://media.giphy.com/media/26DNdV3b6dqn1jzR6/giphy.gif)
 
-## Le scrapping : Technique obscure pour récupéré des infos un site. 
-*Les apprentis mages noirs ont donc apprit a leurs dépend que les devs front-end n'ont pas d'âme , ni de compassion pour leurs futurs collègues ! surtout ceux qui on construit le site de l'assemblée nationale.*
 
- - [x] Exo 01: Crypto_currencies.rb : **OK**
- - [x] Exo 02: Cityhall.rb : **OK**
- - [x] Exo 03: Assemblée.rb **Ok ?**
-
-# scrapping_json
+> Written with [StackEdit](https://stackedit.io/).
