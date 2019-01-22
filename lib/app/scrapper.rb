@@ -34,13 +34,11 @@ class Scrapper
       arr_email.push(get_townhall_email(tmp_str))
     end
     # Création du hash final
-    my_hash = arr_names.zip(arr_email).to_h
-
-    return my_hash
+    hash = arr_names.zip(arr_email).to_h
+    return hash
   end
 
   def save_as_spreadsheet
-    hash = Scrapper.new.get_townhall_urls
     index = 1
     # Crée une session
     session = GoogleDrive::Session.from_config("config.json")
@@ -48,32 +46,30 @@ class Scrapper
     # Copier le code de l'url d'un Google Sheet à toi à la place
     ws = session.spreadsheet_by_key("1vKFn5-PVW0hvlLQ5HH7FHTWmIxcK4_lkSPu1mvMQjwE").worksheets[0]
 
-    hash.each_key do |key|
+    @@my_hash.each_key do |key|
      ws[index, 1] = key
-     ws[index, 2] = hash[key]
+     ws[index, 2] = @@my_hash[key]
      index += 1
-  end
+    end
   ws.save
   # Reloads the worksheet to get changes by other clients.
   ws.reload
-    
   end
 
   def save_as_csv
-    hash = Scrapper.new.get_townhall_urls
     File.open("./db/email.csv", "w") do |f|
-      f << hash.map { |c| c.join(",")}.join("\n")
+      f << @@my_hash.map { |c| c.join(",")}.join("\n")
     end
   end
 
   def save_as_json
-    hash = Scrapper.new.get_townhall_urls
     File.open("./db/emails.JSON","w") do |f|
-      f << hash.to_json
+      f << @@my_hash.to_json
     end
   end
 
   def perform
+    @@my_hash = Scrapper.new.get_townhall_urls
     save_as_json
     save_as_csv 
     save_as_spreadsheet
